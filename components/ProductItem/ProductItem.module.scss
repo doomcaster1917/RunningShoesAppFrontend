@@ -1,0 +1,38 @@
+.container{
+  max-width: 49%;
+  //min-width: 30%;
+  height: 15%;
+  text-decoration: none;
+  line-height: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  border: 1px solid white;
+
+  font-family: "SF UI Display", sans-serif;
+
+  span{
+    font-size: 12px;
+    color: white;
+  }
+  img{
+    max-width: 95%
+  }
+}
+.sizes_block{
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  column-gap: 8px;
+
+  p{
+    background-color: darkgrey;
+    color: white;
+  }
+}

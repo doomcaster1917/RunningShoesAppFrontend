@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    height: 100%;
+    background: black;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Gt Eesti Pro Display UltraBold';
+    src: url("../static/fonts/gt eesti pro display/gteestiprodisplay_ultrabold.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gt Eesti Pro Display Bold';
+    src: url("../static/fonts/gt eesti pro display/gteestiprodisplay_bold.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gt Eesti Pro Display Thin';
+    src: url("../static/fonts/gt eesti pro display/gteestiprodisplay_thin.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gt Eesti Pro Display Light';
+    src: url("../static/fonts/gt eesti pro display/gteestiprodisplay_light.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gt Eesti Pro Display Medium';
+    src: url("../static/fonts/gt eesti pro display/gteestiprodisplay_medium.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gt Eesti Pro Display Regular';
+    src: url("../static/fonts/gt eesti pro display/gteestiprodisplay_regular.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Montserrat Extra Bold';
+    src: url("../static/fonts/montserrat/Montserrat-ExtraBold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url("../static/fonts/montserrat/Montserrat-Regular.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url("../static/fonts/montserrat/Montserrat-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Semi Bold';
+    src: url("../static/fonts/montserrat/Montserrat-SemiBold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Cantarell Bold';
+    src: url("../static/fonts/Cantarell/Cantarell-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../static/fonts/roboto/ofont.ru_Roboto Medium.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url("../static/fonts/roboto/Roboto Bold.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
