@@ -43,7 +43,7 @@ export default function Product ({children}){
                 <p>{children.full_description}</p>
             </div>
 
-            {modalMode&&<BuyFormModal itemName={children.name} tgToken={'token'} setModalMode={setModalMode}></BuyFormModal>}
+            {modalMode&&<BuyFormModal itemName={children.name} tgToken={token} setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
 };
