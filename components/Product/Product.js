@@ -27,7 +27,7 @@ export default function Product ({children}){
                 </div>
             </div>
             <div className={styles.info}>
-                here: {token}
+                {/*here: {token}*/}
                 <h1>{children.name}</h1>
                 <div className={styles.sizes}>
 
