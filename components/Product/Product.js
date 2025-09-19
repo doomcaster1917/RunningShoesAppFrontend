@@ -1,13 +1,13 @@
 'use client'
-
 import styles from './Product.module.scss';
 import backendAddr from "../../config";
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
+import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
 import { useRawInitData } from '@telegram-apps/sdk-react';
-
 
 export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
+    const [modalMode, setModalMode] = useState(false)
 
     const token = useRawInitData()
     return (
@@ -36,11 +36,14 @@ export default function Product ({children}){
                         <span key={index}>{item}</span>
                     )
                 }</div>
+                <button onClick={() => setModalMode(true)}>Купить</button>
             </div>
             <div className={styles.description_block}>
                 Описание:
                 <p>{children.full_description}</p>
             </div>
+
+            {modalMode&&<BuyFormModal itemName={children.name} tgToken={'token'} setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
 };
