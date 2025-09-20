@@ -4,6 +4,7 @@ import backendAddr from "../../config";
 import React, { useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
 import { useRawInitData } from '@telegram-apps/sdk-react';
+import Link from "next/link";
 
 export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
@@ -42,7 +43,9 @@ export default function Product ({children}){
                 Описание:
                 <p>{children.full_description}</p>
             </div>
-
+            <Link className={styles.back_button} href={'/'}>
+                <img src={'../static/images/icons/back_button.png'} alt=""/>
+            </Link>
             {modalMode&&<BuyFormModal itemName={children.name} tgToken={token} setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
