@@ -8,10 +8,12 @@ import styles from './Header.module.scss'
 export default async function Header(){
     return (
         <header>
-            <Image src={TopBanner} alt='logo' priority={true} quality={89} style={{
-                width: '100%',
-                height: 'auto',
-            }}></Image>
+            <Link href={'/'}>
+                <Image src={TopBanner} alt='logo' priority={true} quality={89} style={{
+                    width: '100%',
+                    height: 'auto',
+                }}></Image>
+            </Link>
             {/*<Navbar bg="dark" expand="lg" className="mx-3">*/}
             {/*    <Container>*/}
             {/*        <Navbar.Brand as={Link} href="/">Моё приложение</Navbar.Brand>*/}
