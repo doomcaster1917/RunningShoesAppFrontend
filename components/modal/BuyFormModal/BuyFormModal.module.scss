@@ -93,3 +93,18 @@
   }
 }
 
+.sizes{
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+
+  height: auto;
+  width: auto !important;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  button{
+    height: 4vh;
+    width: 15vw;
+  }
+}
+
