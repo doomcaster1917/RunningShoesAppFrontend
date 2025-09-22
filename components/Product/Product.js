@@ -3,14 +3,14 @@ import styles from './Product.module.scss';
 import backendAddr from "../../config";
 import React, { useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
-// import { useRawInitData } from '@telegram-apps/sdk-react';
+import { useRawInitData } from '@telegram-apps/sdk-react';
 import Link from "next/link";
 
 export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
-    // const token = useRawInitData()
+    const token = useRawInitData()
     return (
         <div className={styles.container}>
             <div className={styles.product_images_area}>
@@ -46,7 +46,7 @@ export default function Product ({children}){
             <Link className={styles.back_button} href={'/'}>
                 <img src={'../static/images/icons/back_button.png'} alt=""/>
             </Link>
-            {modalMode&&<BuyFormModal sizes={children.sizes} itemName={children.name} tgToken={'token'} setModalMode={setModalMode}></BuyFormModal>}
+            {modalMode&&<BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={token} setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
 };
