@@ -6,6 +6,7 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
     const [isSent, setIsSent] = useState(false)
     const [responseMessage, setResponseMessage] = useState('При нажатии на кнопку ваша заявка будет отправлена менеджеру.\n' +
         '                С вами скоро свяжутся.')
+    const [phoneNumber, setPhoneNumber] = useState('')
     const [chosenButton, setChosenButton] = useState(null)
     async function sendValue() {
         if (!isSent) {
@@ -16,7 +17,8 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                         token: tgToken,
                         item_name: itemName,
                         size: chosenButton,
-                        price: price
+                        price: price,
+                        phone: phoneNumber
                     })
                 })
                 console.log(response.status)
@@ -54,6 +56,8 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                         }
                     </div>
                 </div>
+                <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}
+                       placeholder={'Введите ваш номер телефона для связи'} type="text"/>
                 {responseMessage}
                 <button onClick={sendValue}>Отправить заявку</button>
             </div>
