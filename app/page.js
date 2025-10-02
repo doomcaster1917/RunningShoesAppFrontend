@@ -5,7 +5,9 @@ import backendAddr from "../config";
 import OptionsArea from "../components/OptionsArea/OptionsArea";
 
 export default async function Index (){
-    const response = await fetch(`${backendAddr}/products`)
+    const response = await fetch(`${backendAddr}/products`, {
+        cache: "no-store",
+    })
     const products = await response.json()
     return (
         <>
