@@ -5,7 +5,7 @@ import Product from "../../../components/Product/Product";
 
 export default async function ProductPage({searchParams}){
     const { id } = await searchParams;
-    const response = await fetch(`${backendAddr}/products/?id=${id}`, {timeout: 3000,})
+    const response = await fetch(`${backendAddr}/products/?id=${id}`, { cache: "no-store"})
     const children = await response.json()
 
     return (

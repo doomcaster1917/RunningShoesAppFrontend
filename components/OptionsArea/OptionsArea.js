@@ -33,13 +33,11 @@ export default function OptionsArea({startProducts, setProducts}) {
         } else {
             setChosenSizes([...chosenSizes, Number(size)]);
         }
-        console.log(chosenSizes);
     }
 
     function handleSizesRemove(size) {
         let newlist = chosenSizes.filter(element => element !== Number(size));
         setChosenSizes(newlist)
-        console.log(chosenSizes);
     }
 
     function handleCategoriesAdd(category) {
@@ -48,13 +46,11 @@ export default function OptionsArea({startProducts, setProducts}) {
         } else {
             setChosenCategories([...chosenCategories, category]);
         }
-        console.log(chosenCategories);
     }
 
     function handleCategoriesRemove(category) {
         let newlist = chosenCategories.filter(element => element !== category);
         setChosenCategories(newlist)
-        console.log(chosenCategories);
     }
 
     function productsMatchSizesHandler(){
@@ -63,7 +59,6 @@ export default function OptionsArea({startProducts, setProducts}) {
             products = startProducts.filter(product => product.sizes.some(size => chosenSizes.includes(size)));
         }
         if(chosenCategories.length > 0){
-            console.log(startProducts);
             if(products.length > 0){
                 products = products.filter(product => product.product_groups.some(category => chosenCategories.includes(category)));
             }
