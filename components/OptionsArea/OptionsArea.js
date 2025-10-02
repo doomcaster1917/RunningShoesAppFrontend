@@ -63,11 +63,12 @@ export default function OptionsArea({startProducts, setProducts}) {
             products = startProducts.filter(product => product.sizes.some(size => chosenSizes.includes(size)));
         }
         if(chosenCategories.length > 0){
+            console.log(startProducts);
             if(products.length > 0){
-                products = products.filter(product => product.product_groups?.some(category => chosenCategories.includes(category)));
+                products = products.filter(product => product.product_groups.some(category => chosenCategories.includes(category)));
             }
             else {
-                products = startProducts.filter(product => product.product_groups?.some(category => chosenCategories.includes(category)));
+                products = startProducts.filter(product => product.product_groups.some(category => chosenCategories.includes(category)));
             }
         }
         if(chosenCategories.length === 0&&chosenSizes.length === 0){
