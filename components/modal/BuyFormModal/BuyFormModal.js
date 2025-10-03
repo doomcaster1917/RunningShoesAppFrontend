@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import cl from './BuyFormModal.module.scss'
 import backendAddr from "../../../config";
+import Link from "next/link";
 
 export default function BuyFormModal ({price, sizes, tgToken, itemName, setModalMode}) {
     const [isSent, setIsSent] = useState(false)
@@ -23,8 +24,8 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                 })
                 console.log(response.status)
                 if (response.status === 200) {
-                    setResponseMessage('Ваша заявка отправлена. Если у вас остались вопросы, вы можете связаться с нами' +
-                        'в Telegram по нику @maydima .')
+                    setResponseMessage(`Ваша заявка отправлена. Если у вас остались вопросы, вы можете связаться с нами' +
+                        'в Telegram по нику ${<Link href={'https://t.me/maydima'}>@maydima</Link>}.`)
                     setIsSent(true)
                 }
             }

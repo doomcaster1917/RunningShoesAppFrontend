@@ -78,7 +78,7 @@ export default function OptionsArea({startProducts, setProducts}) {
     return (
         <div className={styles.container}>
             <div className={styles.contacts}>
-                <Link href={`tel:+79166057506`}><span>+7(916)605-75-06</span></Link>
+                <Link href={`tel:+79623389048`}><span>+7(916)605-75-06</span></Link>
                 <Link href={'https://t.me/maydima'}><span>Связаться с нами</span></Link>
             </div>
 

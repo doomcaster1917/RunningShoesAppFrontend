@@ -79,14 +79,15 @@
 }
 
 .contacts{
-  width: 70%;
+  width: 65%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-family: "SF UI Display", sans-serif;
-
+  font-size: 14px;
   margin-left: 2.7vw;
+  text-align: center;
   a{
     height: 100%;
     color: white;
