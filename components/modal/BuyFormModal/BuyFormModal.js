@@ -24,10 +24,9 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                 })
 
                 if (response.status === 200) {
-                    setResponseMessage( <> <span className={cl.finish_notification}>
+                    setResponseMessage( <>
                         Ваша заявка отправлена. Если у Вас остались вопросы, Вы можете связаться с нами в Telegram по нику <br/>
                         <Link href="https://t.me/maydima">@maydima</Link>.
-                        </span>
                     </>)
                     setIsSent(true)
                 }
@@ -62,8 +61,8 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                 </div>
                 <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}
                        placeholder={'Введите ваш номер телефона для связи'} type="text"/>
-                {responseMessage}
-                <button onClick={sendValue}>Отправить заявку</button>
+                <span className={cl.finish_notification}>{responseMessage}</span>
+                    <button onClick={sendValue}>Отправить заявку</button>
             </div>
         </>
     );
