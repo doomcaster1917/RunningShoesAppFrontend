@@ -2,6 +2,7 @@
 import React, {useEffect} from 'react';
 import styles from './OptionsArea.module.scss';
 import backendAddr from "../../config";
+import Link from "next/link";
 
 export default function OptionsArea({startProducts, setProducts}) {
     const [active, setActive] = React.useState(false);
@@ -76,6 +77,11 @@ export default function OptionsArea({startProducts, setProducts}) {
 
     return (
         <div className={styles.container}>
+            <div className={styles.contacts}>
+                <Link href={`tel:+79166057506`}><span>+7(916)605-75-06</span></Link>
+                <Link href={'https://t.me/maydima'}><span>Связаться с нами</span></Link>
+            </div>
+
             <button className={styles.filter_button} onClick={() => {active?setActive(false):setActive(true)}}>
                 <img src={'/static/images/icons/filter_icon.png'} alt=""/>
             </button>

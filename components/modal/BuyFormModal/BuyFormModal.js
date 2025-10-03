@@ -23,8 +23,8 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                 })
                 console.log(response.status)
                 if (response.status === 200) {
-
-                    setResponseMessage('Ваша заявка отправлена')
+                    setResponseMessage('Ваша заявка отправлена. Если у вас остались вопросы, вы можете связаться с нами' +
+                        'в Telegram по нику @maydima .')
                     setIsSent(true)
                 }
             }
