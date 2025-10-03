@@ -29,7 +29,7 @@
   justify-content: space-around;
   align-items: center;
 
-  row-gap: 17vw;
+  row-gap: 8vh;
 
   z-index: 5;
 
@@ -111,3 +111,6 @@
   }
 }
 
+.finish_notification{
+  font-size: 18px !important;
+}

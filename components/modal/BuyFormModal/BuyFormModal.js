@@ -22,10 +22,13 @@ export default function BuyFormModal ({price, sizes, tgToken, itemName, setModal
                         phone: phoneNumber
                     })
                 })
-                console.log(response.status)
+
                 if (response.status === 200) {
-                    setResponseMessage(`Ваша заявка отправлена. Если у вас остались вопросы, вы можете связаться с нами' +
-                        'в Telegram по нику ${<Link href={'https://t.me/maydima'}>@maydima</Link>}.`)
+                    setResponseMessage( <> <span className={cl.finish_notification}>
+                        Ваша заявка отправлена. Если у Вас остались вопросы, Вы можете связаться с нами в Telegram по нику <br/>
+                        <Link href="https://t.me/maydima">@maydima</Link>.
+                        </span>
+                    </>)
                     setIsSent(true)
                 }
             }
