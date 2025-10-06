@@ -30,6 +30,15 @@ export default function Product ({children}){
             <div className={styles.info}>
                 {/*here: {token}*/}
                 <h1>{children.name}</h1>
+                <h1>{children.price} ₽</h1>
+                <div className={styles.sizes}>
+
+                    <span>Категории:</span>{
+                    children.product_groups.map((item, index) =>
+                        <span key={index}>{item}</span>
+                    )
+                }</div>
+                <br/>
                 <div className={styles.sizes}>
 
                     <span>Размеры:</span>{
