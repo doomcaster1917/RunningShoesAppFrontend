@@ -6,7 +6,7 @@ import OptionsArea from "../components/OptionsArea/OptionsArea";
 
 export default async function Index (){
     const response = await fetch(`${backendAddr}/products`, {
-        cache: "no-store",
+        next: { revalidate: 600 },
     })
     const products = await response.json()
     return (
