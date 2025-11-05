@@ -1,4 +1,5 @@
 import "/GlobalStyles/global.css";
+import { ScrollRestoration } from 'next-scroll-restoration';
 
 export const metadata = {
     title: "Running Shoes Mini App",
@@ -10,8 +11,8 @@ export default function RootLayout({ children }) {
         <html>
         <head>
             <title>Shoes app</title>
-            {/*<script src="https://telegram.org/js/telegram-web-app.js" async></script>*/}
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <ScrollRestoration/>
         </head>
         <body>{children}</body>
         </html>
