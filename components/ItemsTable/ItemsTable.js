@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 import styles from './itemsTable.module.scss'
 import ProductItem from "../ProductItem/ProductItem";
 import OptionsArea from "../OptionsArea/OptionsArea";
@@ -7,6 +7,7 @@ import OptionsArea from "../OptionsArea/OptionsArea";
 const ItemsTable = ({children}) => {
     const [products, setProducts] = useState();
     const [startProducts, setStartProducts] = useState();
+
     useEffect(() => {
         setProducts(children);
         setStartProducts(children);

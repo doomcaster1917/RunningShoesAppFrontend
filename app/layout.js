@@ -1,5 +1,6 @@
 import "/GlobalStyles/global.css";
-import { ScrollRestoration } from 'next-scroll-restoration';
+import {UseScrollRestoration} from "../components/CustomHooks/useScrollRestoration/UseScrollRestoration";
+
 
 export const metadata = {
     title: "Running Shoes Mini App",
@@ -12,7 +13,6 @@ export default function RootLayout({ children }) {
         <head>
             <title>Shoes app</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <ScrollRestoration/>
         </head>
         <body>{children}</body>
         </html>

@@ -1,9 +1,9 @@
 'use client'
 import styles from './Product.module.scss';
 import backendAddr from "../../config";
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
-import { useRouter } from 'next/navigation';
+import Link from "next/link";
 import { useRawInitData } from '@telegram-apps/sdk-react';
 
 
@@ -11,7 +11,6 @@ export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
-    const router = useRouter()
     const token = useRawInitData()
     return (
         <div className={styles.container}>
@@ -54,10 +53,17 @@ export default function Product ({children}){
                 Описание:
                 <p>{children.full_description}</p>
             </div>
-            <button className={styles.back_button} onClick={() => {router.back()}}>
+            {/*<button className={styles.back_button} onClick={() => {*/}
+            {/*    router.back()*/}
+            {/*}}>*/}
+            {/*    <img src={'../static/images/icons/back_button.png'} alt=""/>*/}
+            {/*</button>*/}
+            <Link className={styles.back_button} href={'/'}>
                 <img src={'../static/images/icons/back_button.png'} alt=""/>
-            </button>
-            {modalMode&&<BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={token} setModalMode={setModalMode}></BuyFormModal>}
+            </Link>
+            {modalMode &&
+                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={'token'}
+                              setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
 };

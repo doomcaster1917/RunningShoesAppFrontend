@@ -17,7 +17,6 @@
     "@telegram-apps/sdk-react": "^3.3.7",
     "bootstrap": "^5.3.7",
     "next": "^15.5.0",
-    "next-scroll-restoration": "^0.0.4",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
