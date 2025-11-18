@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from "../components/Layout/Layout";
 import ItemsTable from "../components/ItemsTable/ItemsTable";
 import backendAddr from "../config";
-import {UseScrollRestoration} from "../components/CustomHooks/useScrollRestoration/UseScrollRestoration";
 
 export default async function Index (){
     const response = await fetch(`${backendAddr}/products`, {
@@ -14,8 +13,9 @@ export default async function Index (){
         <>
             <Layout>
                 <ItemsTable>{products}</ItemsTable>
-                <UseScrollRestoration/>
             </Layout>
         </>
     );
 };
+
+

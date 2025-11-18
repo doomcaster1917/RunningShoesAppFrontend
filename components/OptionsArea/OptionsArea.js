@@ -3,6 +3,8 @@ import React, {useEffect} from 'react';
 import styles from './OptionsArea.module.scss';
 import backendAddr from "../../config";
 import Link from "next/link";
+import UseFiltersRestoration, {UseSaveCategories, UseSaveSizes} from "../CustomHooks/Restorations/UseFiltersRestoration";
+import {UseScrollRestoration} from "../CustomHooks/Restorations/UseScrollRestoration";
 
 export default function OptionsArea({startProducts, setProducts}) {
     const [active, setActive] = React.useState(false);
@@ -31,27 +33,33 @@ export default function OptionsArea({startProducts, setProducts}) {
     function handleSizesAdd(size) {
         if (!chosenSizes){
             setChosenSizes([Number(size)]);
+            UseSaveSizes([Number(size)])
         } else {
             setChosenSizes([...chosenSizes, Number(size)]);
+            UseSaveSizes([...chosenSizes, Number(size)])
         }
     }
 
     function handleSizesRemove(size) {
         let newlist = chosenSizes.filter(element => element !== Number(size));
         setChosenSizes(newlist)
+        UseSaveSizes(newlist)
     }
 
     function handleCategoriesAdd(category) {
         if (!chosenCategories){
             setChosenCategories([category]);
+            UseSaveCategories([category])
         } else {
             setChosenCategories([...chosenCategories, category]);
+            UseSaveCategories([...chosenCategories, category])
         }
     }
 
     function handleCategoriesRemove(category) {
         let newlist = chosenCategories.filter(element => element !== category);
         setChosenCategories(newlist)
+        UseSaveCategories(newlist)
     }
 
     function productsMatchSizesHandler(){
@@ -120,6 +128,10 @@ export default function OptionsArea({startProducts, setProducts}) {
 
                 <button className={styles.show_button} onClick={() => productsMatchSizesHandler()}>Показать выбор</button>
             </div> : null}
+            <UseFiltersRestoration startProducts={startProducts} setProducts={setProducts}
+                                   chosenCategories={chosenCategories} chosenSizes={chosenSizes} setChosenCategories={setChosenCategories}
+                                   setChosenSizes={setChosenSizes}/>
+
         </div>
     );
 };

@@ -2,17 +2,16 @@
 import {useEffect, useLayoutEffect} from 'react';
 import { usePathname } from 'next/navigation';
 
-export function UseScrollRestoration() {
+export function UseScrollRestoration({products}) {
     const pathname = usePathname();
     useLayoutEffect(() => {
         const savedScroll = sessionStorage.getItem(`${pathname}`);
         if (savedScroll) {
             const y = savedScroll;
-            // requestAnimationFrame(() => window.scrollTo(0, y));
             const timeout = setTimeout(() => window.scrollTo(0, y), 100);
             return () => clearTimeout(timeout);
         }
-    }, [pathname]);
+    }, [pathname, products]);
 
     // Сохранение скролла при прокрутке (с debounce)
     useEffect(() => {

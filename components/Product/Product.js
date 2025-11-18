@@ -62,7 +62,7 @@ export default function Product ({children}){
                 <img src={'../static/images/icons/back_button.png'} alt=""/>
             </Link>
             {modalMode &&
-                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={'token'}
+                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={token}
                               setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
