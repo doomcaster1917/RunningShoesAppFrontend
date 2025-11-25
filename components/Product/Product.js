@@ -18,7 +18,6 @@ export default function Product ({children}){
     return (
         <div className={styles.container}>
             <div className={styles.product_images_area}>
-                <h1>{token}</h1>
                 <div className={styles.main_image_wrapper}>
                     <img className={styles.main_image} src={mainImage} alt={""}/>
                 </div>
