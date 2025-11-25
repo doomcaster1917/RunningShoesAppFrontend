@@ -5,15 +5,8 @@ import React, {useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
-const {useTelegramInitData} = dynamic(
-    () => import('@telegram-apps/sdk-react')
-        .then(mod => ({
-            default: function TelegramInitDataHook() {
-                const raw = mod.useRawInitData();
-                return raw.data; // ← промис
-            }
-        })),
+const useInitData = dynamic(
+    () => import('@telegram-apps/sdk-react').then(mod => mod.useRawInitData().data),
     { ssr: false }
 );
 
@@ -21,6 +14,7 @@ export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
+    const token = useInitData()
     return (
         <div className={styles.container}>
             <div className={styles.product_images_area}>
@@ -71,7 +65,7 @@ export default function Product ({children}){
                 <img src={'../static/images/icons/back_button.png'} alt=""/>
             </Link>
             {modalMode &&
-                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={useTelegramInitData}
+                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={token}
                               setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
