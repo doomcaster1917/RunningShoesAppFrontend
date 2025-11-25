@@ -1,10 +1,11 @@
 'use client'
 import styles from './Product.module.scss';
 import backendAddr from "../../config";
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+
 const {useTelegramInitData} = dynamic(
     () => import('@telegram-apps/sdk-react')
         .then(mod => ({
@@ -19,8 +20,6 @@ const {useTelegramInitData} = dynamic(
 export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
-
-    const token = useTelegramInitData()
 
     return (
         <div className={styles.container}>
@@ -72,7 +71,7 @@ export default function Product ({children}){
                 <img src={'../static/images/icons/back_button.png'} alt=""/>
             </Link>
             {modalMode &&
-                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={'token'}
+                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={useTelegramInitData}
                               setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
