@@ -17,7 +17,7 @@ export default function Product ({children}){
     try {
         const token = useRawInitData()
     }catch (err){
-        return <p>{err}</p>
+        return <p style={{color: 'white'}}>{err}</p>
     }
 
     return (
