@@ -14,7 +14,12 @@ export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
-    const token = useRawInitData()
+    try {
+        const token = useRawInitData()
+    }catch (err){
+        return <p>{err}</p>
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.product_images_area}>
