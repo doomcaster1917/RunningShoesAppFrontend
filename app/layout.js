@@ -1,5 +1,4 @@
 import "/GlobalStyles/global.css";
-import {UseScrollRestoration} from "../components/CustomHooks/Restorations/UseScrollRestoration";
 
 
 export const metadata = {

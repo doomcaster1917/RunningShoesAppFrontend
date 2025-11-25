@@ -3,7 +3,6 @@ import React, {useEffect, useLayoutEffect, useState} from 'react';
 import styles from './itemsTable.module.scss'
 import ProductItem from "../ProductItem/ProductItem";
 import OptionsArea from "../OptionsArea/OptionsArea";
-import UseFiltersRestoration from "../CustomHooks/Restorations/UseFiltersRestoration";
 import {UseScrollRestoration} from "../CustomHooks/Restorations/UseScrollRestoration";
 
 const ItemsTable = ({children}) => {

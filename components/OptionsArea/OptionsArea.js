@@ -4,7 +4,7 @@ import styles from './OptionsArea.module.scss';
 import backendAddr from "../../config";
 import Link from "next/link";
 import UseFiltersRestoration, {UseSaveCategories, UseSaveSizes} from "../CustomHooks/Restorations/UseFiltersRestoration";
-import {UseScrollRestoration} from "../CustomHooks/Restorations/UseScrollRestoration";
+
 
 export default function OptionsArea({startProducts, setProducts}) {
     const [active, setActive] = React.useState(false);

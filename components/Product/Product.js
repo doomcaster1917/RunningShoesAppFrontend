@@ -4,8 +4,11 @@ import backendAddr from "../../config";
 import React, {useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
 import Link from "next/link";
-import { useRawInitData } from '@telegram-apps/sdk-react';
-
+import dynamic from "next/dynamic";
+const {useRawInitData} = dynamic(
+    () => import('@telegram-apps/sdk-react').then(module => module.useRawInitData),
+    { ssr: false }
+);
 
 export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
