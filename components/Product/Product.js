@@ -14,11 +14,6 @@ export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
-    try {
-        const token = useRawInitData()
-    }catch (err){
-        return <p style={{color: 'white'}}>{err}</p>
-    }
 
     return (
         <div className={styles.container}>
@@ -70,7 +65,7 @@ export default function Product ({children}){
                 <img src={'../static/images/icons/back_button.png'} alt=""/>
             </Link>
             {modalMode &&
-                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={token}
+                <BuyFormModal price={children.price} sizes={children.sizes} itemName={children.name} tgToken={'token'}
                               setModalMode={setModalMode}></BuyFormModal>}
         </div>
     );
