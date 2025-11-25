@@ -14,11 +14,12 @@ export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
-    useEffect(async () => {
+
+    useEffect(() => {
         async function tokn(){
             const token = await useRawInitData()
         }
-        await tokn()
+        tokn()
     }, [useRawInitData]);
 
     return (
