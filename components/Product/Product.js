@@ -1,7 +1,7 @@
 'use client'
 import styles from './Product.module.scss';
 import backendAddr from "../../config";
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import BuyFormModal from "../modal/BuyFormModal/BuyFormModal";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -14,6 +14,9 @@ export default function Product ({children}){
     const [mainImage, setMainImage] = useState(`${backendAddr}${children?.main_image?.image}`)
     const [modalMode, setModalMode] = useState(false)
 
+    useEffect(() => {
+        const token = useRawInitData()
+    }, [useRawInitData]);
 
     return (
         <div className={styles.container}>
